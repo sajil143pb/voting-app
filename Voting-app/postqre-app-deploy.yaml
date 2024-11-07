@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: postqre-deploy
+  labels:
+    name: postqre-deploy
+    app: demo-voting-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: postqres-pod
+      app: demo-voting-app
+  
+  template:
+      metadata:
+        name: postqres-pod
+      labels:
+        name: postqres-pod
+        app: demo-voting-app
+      spec:
+        containers:
+          - name: postqres-pod
+            image: postqres-pod
+            ports:
+              - containerPort: 6379
+            env:
+            - name: POSTGRES_USER
+              value: "postgres"
+            - name: POSTGRES_PASSWORD
+              value: "postgres"
+            - name: POSTGRES_HOST_AUTH_METHOD
+              value: trust
+
+              
+
+
+
