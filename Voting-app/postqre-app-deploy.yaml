@@ -21,7 +21,7 @@ spec:
       spec:
         containers:
           - name: postqres-pod
-            image: postqres-pod
+            image: postqres
             ports:
               - containerPort: 6379
             env:
