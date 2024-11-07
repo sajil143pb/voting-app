@@ -18,8 +18,8 @@ spec:
         labels:
           name: postqres-pod
           app: demo-voting-app
-        spec:
-          containers:
+      spec:
+        containers:
           - name: postqres-pod
             image: postqres-pod
             ports:
