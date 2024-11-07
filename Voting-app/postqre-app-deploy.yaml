@@ -15,22 +15,22 @@ spec:
   template:
       metadata:
         name: postqres-pod
-      labels:
-        name: postqres-pod
-        app: demo-voting-app
-      spec:
-        containers:
+        labels:
+          name: postqres-pod
+          app: demo-voting-app
+        spec:
+          containers:
           - name: postqres-pod
             image: postqres-pod
             ports:
               - containerPort: 6379
             env:
-            - name: POSTGRES_USER
-              value: "postgres"
-            - name: POSTGRES_PASSWORD
-              value: "postgres"
-            - name: POSTGRES_HOST_AUTH_METHOD
-              value: trust
+              - name: POSTGRES_USER
+                value: "postgres"
+              - name: POSTGRES_PASSWORD
+                value: "postgres"
+              - name: POSTGRES_HOST_AUTH_METHOD
+                value: trust
 
               
 
